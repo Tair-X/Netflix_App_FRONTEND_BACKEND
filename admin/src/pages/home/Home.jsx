@@ -45,6 +45,7 @@ export default function Home() {
             ...prev,
             { name: MONTHS[item._id - 1], "New User": item.total },
           ])
+          
         );
       } catch (err) {
         console.log(err);

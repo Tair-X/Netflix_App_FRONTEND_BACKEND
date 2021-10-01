@@ -1,7 +1,8 @@
 import "./widgetSm.css";
-import { Visibility } from "@material-ui/icons";
+import { CallMissedSharp, Visibility } from "@material-ui/icons";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { mergeClasses } from "@material-ui/styles";
 
 export default function WidgetSm() {
   const [newUsers, setNewUsers] = useState([]);
@@ -49,4 +50,20 @@ export default function WidgetSm() {
       </ul>
     </div>
   );
+}
+
+export default function ProductScreen(){
+  const router=useRouter();
+  const {slug}=router.query;
+  const product=data.product.find((a)=>a.slug==slug)
+  if(!product){
+    return <div>Product Not Found</div>
+  }
+  return (
+    <div>
+      <h1>{product.name}</h1>
+    </div>
+  )
+
+
 }
